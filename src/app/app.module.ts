@@ -15,6 +15,9 @@ import { HomeModule } from './home/home.module';
 import { DetailModule } from './detail/detail.module';
 
 import { AppComponent } from './app.component';
+import { WindowModule } from './window/window.module';
+import { WindowRoutingModule } from './window/window-routing.module';
+import { UtilsModule } from './utils/utils.module';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
@@ -38,7 +41,10 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    })
+    }),
+    WindowModule,
+    WindowRoutingModule,
+    UtilsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

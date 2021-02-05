@@ -4,11 +4,12 @@ import { PageNotFoundComponent } from './shared/components';
 
 import { HomeRoutingModule } from './home/home-routing.module';
 import { DetailRoutingModule } from './detail/detail-routing.module';
+import { WindowRoutingModule } from './window/window-routing.module';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'window',
     pathMatch: 'full'
   },
   {
@@ -21,7 +22,8 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' }),
     HomeRoutingModule,
-    DetailRoutingModule
+    DetailRoutingModule,
+    WindowRoutingModule
   ],
   exports: [RouterModule]
 })
